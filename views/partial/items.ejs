@@ -1,0 +1,39 @@
+<div class="col-sm-9 padding-right">
+  <!--features_items-->
+  <div class="features_items">
+    <h2 class="title text-center"><%= title %></h2>
+    <% products.forEach(function(product) { %>
+    <div class="col-sm-4">
+      <div class="product-image-wrapper">
+        <div class="single-products">
+          <div class="productinfo text-center">
+            <a href="/detail/<%= product.id %>"
+              ><img src="/images/home/<%= product.image %>" alt=""
+            /></a>
+            <p class="css_name-product">
+              <a href="/detail/<%= product.id %>"
+                ><%= product.product_name %></a
+              >
+            </p>
+
+            <div class="price_mt-1">
+              <div style="display: flex">
+                <span class="money">₫</span>
+                <p class="text_price">
+                  <%= product.price.toLocaleString('vi-VN') %>
+                </p>
+              </div>
+
+              <p style="color: rgba(0, 0, 0, 0.54)">
+                Đã bán: <%= product.article_number %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+
+  <!--features_items-->
+</div>

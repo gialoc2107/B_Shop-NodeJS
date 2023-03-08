@@ -1,0 +1,48 @@
+<form action="/doCatAdd" method="post" class="form-horizontal">
+  <!-- Form Name -->
+  <legend style="margin-left: 5px">Thêm danh mục</legend>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label">Tên Danh mục</label>
+    <div class="col-md-4">
+      <input
+        name="cat_name"
+        placeholder="Nhập tên danh mục"
+        class="form-control input-md"
+        type="text"
+      />
+    </div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label">Parent</label>
+    <div class="col-md-4">
+      <select name="parent" class="form-control">
+        <% categories.forEach(function(cat) { %>
+        <option value="<%= cat.id %>"><%= cat.category_name %></option>
+        <% }) %>
+      </select>
+    </div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label">Status</label>
+    <div class="col-md-4">
+      <select name="status" class="form-control">
+        <option selected>1</option>
+        ;
+        <option>0</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Button -->
+  <div class="form-group">
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-default">Thêm</button>
+    </div>
+  </div>
+</form>

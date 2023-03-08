@@ -1,0 +1,74 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div style="margin-bottom: 20px" class="col-sm-9">
+        <div class="blog-post-area">
+          <h2 class="title text-center"><%= title %></h2>
+          <% orders.forEach(function(order) { %>
+          <div class="single-blog-post">
+            <h3>Mã đơn hàng: <%= order.id %></h3>
+            <div class="post-meta">
+              <ul>
+                <li><i class="fa fa-user"></i> <%= order.fullname %></li>
+                <li><i class="fa fa-phone"></i> <%= order.phone %></li>
+                <li>
+                  <i
+                    style="padding-left: 7.5px; padding-right: 8px"
+                    class="fa fa-map-marker"
+                  ></i>
+                  <%= order.address %>
+                </li>
+              </ul>
+              <span>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+              </span>
+            </div>
+            <section id="cart_items">
+              <div class="table-responsive cart_info">
+                <table class="table table-condensed">
+                  <thead>
+                    <tr class="cart_menu">
+                      <th>Tên sản phẩm</th>
+                      <th>Hình ảnh</th>
+                      <th>Số lượng</th>
+                      <th>Ngày đặt hàng</th>
+                      <th>Giá</th>
+                      <th>Tổng tiền</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% orderDetail.forEach(function(orderDetail){ if(order.id ==
+                    orderDetail.order_id){ %> <% products.forEach(function(pro){
+                    if(pro.id == orderDetail.product_id){ %>
+                    <tr>
+                      <td><%= pro.product_name %></td>
+                      <td>
+                        <img
+                          style="width: 100px"
+                          src="/images/home/<%= pro.image %>"
+                          alt=""
+                        />
+                      </td>
+                      <td><%= orderDetail.qty %></td>
+                      <td><%= order.order_date %></td>
+                      <td><%= pro.price.toLocaleString('vi-VN') %>₫</td>
+                      <td><%= pro.price*orderDetail.qty %>₫</td>
+                    </tr>
+                    <% }}) %> <% }}); %>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <!--/#cart_items-->
+          </div>
+          <% }) %>
+        </div>
+        <%- paginator %>
+      </div>
+    </div>
+  </div>
+</section>
