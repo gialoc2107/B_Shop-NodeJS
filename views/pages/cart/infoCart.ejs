@@ -1,0 +1,100 @@
+<section id="cart_items">
+    <div class="container">
+        <div class="table-responsive cart_info">
+            <table style="width: auto;" class="table table-condensed">
+                <thead>
+                    <tr class="cart_menu">
+                        <td class="image">Hình ảnh</td>
+                        <td class="description">Tên sản phẩm</td>
+                        <td class="price">Giá bán</td>
+                        <td class="quantity">Số lượng</td>
+                        <td class="total">Tổng cộng</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+	                    i = 0;
+	                    sum = 0;
+	                    cart.forEach(function(c){
+		                    c.forEach(function(a){
+                    %>
+                        <tr>
+                            <td class="cart_product">
+                                <a href=""><img width="100px" src="/images/home/<%= a.image %>" alt=""/></a>
+                            </td>
+                            <td class="cart_description">
+                                <h4><a href=""><%= a.product_name %></a></h4>
+                            </td>
+                            <td class="cart_price">
+                                <p style="margin-bottom: 17px;"><%= a.price.toLocaleString('vi-VN') %>₫</p>
+                            </td>
+                            <td style="width: 150px;" class="cart_quantity">
+                                <div class="cart_quantity_button">
+                                    <a class="cart_quantity_up" href=""> + </a>
+                                    <input style="margin-bottom: 17px; padding-bottom: 0;" class="cart_quantity_input" type="text" name="quantity" value="<%= amount[i] %>" autocomplete="off" size="2"/>
+                                    <a class="cart_quantity_down" href=""> - </a>
+                                </div>
+                            </td>
+                            <td class="cart_total">
+                                <p style="margin-bottom: 17px;" class="cart_total_price"><%= a.price*amount[i] %>₫</p>
+                            </td>
+                        </tr>
+                    <%
+                            sum+= a.price*amount[i];
+                            })
+                            i++;
+                        })
+                    %>
+                    <tr>
+							<td colspan="4">&nbsp;</td>
+							<td colspan="2">
+								<table class="table table-condensed total-result">
+									<tr>
+										<td>Tổng số sản phẩm</td>
+										<td><%= numberOfItem %></td>
+									</tr>
+									<tr>
+										<td>Thuế phát sinh</td>
+										<td>0₫</td>
+									</tr>
+									<tr class="shipping-cost">
+										<td>Giá vận chuyển</td>
+										<td>30.000₫</td>										
+									</tr>
+									<tr>
+										<td>Tổng cộng</td>
+										<td><span><%= sum.toLocaleString('vi-VN') %>₫</span></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="shopper-informations">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="shopper-info">
+                        <p>Thông tin khách hàng</p>
+                        <form action="/saveCart" method="post">
+                            <input readonly value="<%= fakeid %>" type="text" name="customerId" placeholder="Mã khách hàng">
+                            <input value="<%= name %>" type="text" name="fullname" placeholder="Họ tên khách hàng">
+                            <input value="<%= address %>" type="text" name="add" placeholder="Địa chỉ">
+                            <input value="<%= email %>" type="text" name="email" placeholder="Email">
+                            <input value="<%= phone %>" type="text" name="phone" placeholder="Số điện thoại">
+
+                            <input style="width: 100px; margin-left: 25px; " type="submit" value="Thanh toán" class="btn btn-primary btnchek"></input>
+                        </form>
+                    </div>
+                </div>
+                <div style="margin-left: 100px;" class="col-sm-4">
+                    <div class="order-message">
+                        <p>Ghi chú</p>
+                        <textarea style="width: 470px !important;" name="message"  placeholder="Ghi chú về đơn đặt hàng của bạn, ghi chú đặc biệt khi giao hàng." rows="16"></textarea>
+                    </div>	
+                </div>			
+            </div>
+        </div>
+    </div>
+</section> <!--/#cart_items-->

@@ -1,0 +1,82 @@
+<section id="cart_items">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+              <li><a href="/">Trang chủ </a></li>
+              <span> > </span>
+              <li class="active"> Giỏ hàng</li>
+            </ol>
+        </div>
+        <div class="table-responsive cart_info">
+            <table style="width: auto;" class="table table-condensed">
+                <thead>
+                    <tr class="cart_menu">
+                        <td class="image">Hình ảnh</td>
+                        <td class="description">Tên sản phẩm</td>
+                        <td class="price">Giá bán</td>
+                        <td class="quantity">Số lượng</td>
+                        <td class="total">Tổng cộng</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+	                    i = 0;
+	                    sum = 0;
+	                    cart.forEach(function(c){
+		                    c.forEach(function(a){
+                    %>
+                        <tr>
+                            <td class="cart_product">
+                                <a href=""><img width="100px" src="/images/home/<%= a.image %>" alt=""/></a>
+                            </td>
+                            <td class="cart_description">
+                                <h4><a href=""><%= a.product_name %></a></h4>
+                            </td>
+                            <td class="cart_price">
+                                <p style="margin-top: 20px;"><%= a.price.toLocaleString('vi-VN') %>₫</p>
+                            </td>
+                            <td class="cart_quantity">
+                                <div class="cart_quantity_button">
+                                    <a class="cart_quantity_up" href=""> + </a>
+                                    <input style="padding-bottom: 0;" class="cart_quantity_input" type="text" name="quantity" value="<%= amount[i] %>" autocomplete="off" size="2"/>
+                                    <a class="cart_quantity_down" href=""> - </a>
+                                </div>
+                            </td>
+                            <td class="cart_total">
+                                <p style="margin-top: 20px;" class="cart_total_price"><%= a.price*amount[i] %>₫</p>
+                            </td>
+                        </tr>
+                    <%
+                            sum+= a.price*amount[i];
+                            })
+                            i++;
+                        })
+                    %>
+                </tbody>
+            </table>
+        </div>
+        <section id="do_action">
+    <div class="container">
+        <div class="heading">
+            <h3>Bạn sẽ làm gì tiếp theo ?</h3>
+            <p>Chọn xem bạn có mã giảm giá hoặc điểm thưởng muốn sử dụng và ước tính chi phí giao hàng của mình.</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="total_area">
+                    <ul>
+                        <li>Tổng số sản phẩm <span><%= numberOfItem %></span></li>
+                        <li>Thuế phát sinh <span>0₫</span></li>
+                        <li>Giá vận chuyển <span>30.000₫</span></li>
+                        <li>Tổng cộng <span><%= sum.toLocaleString('vi-VN') %>₫</span></li>
+                    </ul>
+                        <a class="btn btn-default check_out chekout" href="/infoCart">Thủ tục thanh toán</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#do_action-->
+    </div>
+</section> <!--/#cart_items-->
+
+

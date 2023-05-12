@@ -1,0 +1,208 @@
+.logo img {
+  height: 45px;
+}
+
+.pagination li a {
+  font-size: 18px;
+}
+
+div.view-product img {
+  height: 340px;
+}
+
+img.one {
+  margin-left: 0 !important;
+  width: 66px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+img.two {
+  margin-left: 15px !important;
+  width: 66px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+img.three {
+  margin-left: 15px !important; 
+  width: 70px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+h3.title-description {
+  margin-top: 0;
+}
+
+div.col-md-8.proDetail {
+  width: 678px;
+}
+
+.breadcrumbs .breadcrumb li a:after {
+  content: none !important;
+}
+
+.css_name-product {
+  margin-top: 10px;
+  text-align: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.css_name-product a {
+  color: #696763;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  white-space: nowrap;
+  line-height: 1.2;
+  display: block;
+}
+
+.css_name-product a:hover {
+  color: #FE980F;
+}
+
+.css_price {
+  text-align: left;
+  margin-top: 10px;
+  display: block;
+}
+
+.price_mt-1 {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 10px 0 10px;
+}
+
+.price_mt-2 {
+  font-size: 16px;
+  display: flex;
+}
+
+.text-muted-1 {
+  margin-top: 2.5px;
+  text-decoration: line-through;
+  margin-right: 5px;
+  margin-left: 10px;
+  font-size: 15px;
+  color: #696763;
+}
+
+.text_price {
+  color: #FE980F !important;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.text_price-discount {
+  color: #FE980F !important;
+  margin-bottom: 5px;
+}
+
+.money {
+  font-size: 8px;
+  margin-top: 4.8px;
+  color: #FE980F;
+  margin-right: 1px;
+}
+
+.ratingg {
+  display: flex;
+  margin-left: 10px;
+  justify-content: space-between;
+}
+
+.ratingg img{
+  width: 70px !important;
+  height: 10px;
+  margin-top: 5.5px;
+}
+
+.text-muted-2 {
+  margin-left: 10px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.girl.img-responsive {
+  margin-top: 70px;
+}
+
+.ram-ssd {
+  margin-bottom: 0 !important;
+  cursor: default !important;
+  margin-left: 10px;
+  font-size: 12px !important;
+  height: 27px;
+}
+
+.price_mt-1 {
+  margin-top: 10px;
+}
+
+.article {
+  margin-right: 10px;
+  font-size: 12px !important;
+}
+
+.info-items {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.icon-items {
+  margin-right: 15px;
+}
+
+.font-item {
+  font-weight: bold !important;
+}
+
+.fa-location-dot {
+  margin-left: 2px;
+  margin-right: 18px;
+}
+
+.dot2 {
+  margin-right: 2px;
+}
+
+.price_mt-22 {
+  text-align: left;
+}
+
+.discout2 {
+  margin-left: 10px;
+}
+.facart {
+  margin-right: 5px;
+}
+
+.ratig {
+  justify-content: unset;
+}
+
+.ratigg {
+  margin-left: 5px;
+  margin-top: 3px;
+  font-size: 12px !important;
+}
+
+.btnsub {
+  padding: 5px 15px 5px 15px !important;
+}
+
+.chekout {
+  margin-left: 40px !important;
+}
+
+.btnchek {
+  margin-left: 0 !important;
+}

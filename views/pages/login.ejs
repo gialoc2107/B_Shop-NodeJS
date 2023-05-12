@@ -1,0 +1,45 @@
+<section style="margin-top: 0;" id="form"><!--form-->
+    <div class="container">
+      <div class="row">
+        <div style="margin-left: 0;" class="col-sm-4 col-sm-offset-1">
+          <div class="login-form"><!--login form-->
+            <h2>Đăng nhập vào tài khoản</h2>
+            <form action="/doLogin" method="post">
+              <input type="email" name="email" placeholder="Nhập Email" />
+              <input type="password" name="pass" placeholder="Nhập mật khẩu" />
+              <span>
+                <input type="checkbox" class="checkbox"> 
+                Nhớ mật khẩu
+              </span>
+              <button type="submit" class="btn btn-default">Đăng nhập</button>
+            </form>
+          </div><!--/login form-->
+        </div>
+        <div class="col-sm-1">
+          <h2 class="or">Hoặc</h2>
+        </div>
+        <div class="col-sm-4">
+          <div class="signup-form"><!--sign up form-->
+            <h2>Đăng ký người dùng mới!</h2>
+            <form action="/doRegistration" method="post">
+              <div class="registration"></div>
+                <input type="text" placeholder="Nhập họ tên" name="name" required/>
+  
+                <input type="email" placeholder="Nhập email" name="email" required/>
+  
+                <input type="text" placeholder="Nhập số điện thoại" name="phone" required />
+  
+                <input type="text" placeholder="Nhập địa chỉ" name="address" required />
+  
+                <input type="password" placeholder="Nhập mật khẩu" name="psw" required/>
+  
+                <input type="password" placeholder="Nhập lại mật khẩu" name="psw-repeat" required/>
+  
+                <button type="submit" class="registerbtn" name="submit">Đăng ký</button>
+              </div>
+            </form>
+          </div><!--/sign up form-->
+        </div>
+      </div>
+    </div>
+  </section><!--/form-->

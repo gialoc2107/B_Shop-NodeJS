@@ -1,0 +1,350 @@
+<div class="col-sm-9 padding-right">
+  <% products.forEach(function(product) { %>
+  <div class="product-details">
+    <!--product-details-->
+    <div class="col-sm-5">
+      <div class="view-product">
+        <img src="/images/home/<%= product.image %>" alt="" />
+      </div>
+      <div id="similar-product" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <a href=""
+              ><img
+                style="width: 97.4px; border-radius: unset;"
+                class="one"
+                src="/images/product-details/detail/<%= product.img_detail1 %>"
+                alt=""
+            /></a>
+            <a href=""
+              ><img
+              style="width: 97.4px; border-radius: unset;"
+                class="two"
+                src="/images/product-details/detail/<%= product.img_detail2 %>"
+                alt=""
+            /></a>
+            <a href=""
+              ><img
+              style="width: 97.4px; border-radius: unset;"
+                class="three"
+                src="/images/product-details/detail/<%= product.img_detail3 %>"
+                alt=""
+            /></a>
+            <!-- <a href=""
+              ><img
+                class="three"
+                src="/images/product-details/detail/<= product.img_detail4 %>"
+                alt=""
+            /></a> -->
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <!-- <a class="left item-control" href="#similar-product" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="right item-control" href="#similar-product" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a> -->
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="product-information">
+        <!--/product-information-->
+        <h2><%= product.product_name %></h2>
+        <img src="/images/product-details/rating.png" alt="" />
+        <p>Đơn đặt hàng: <%= product.article_number %></p>
+        <p style="margin: 0">
+          <span style="margin: 0" class="text-muted-1">
+            <%= product.price.toLocaleString('vi-VN') %>₫
+          </span>
+        </p>
+
+        <span style="margin-top: 0; display: flex;">
+          <span><%= product.sale_price.toLocaleString('vi-VN') %>₫</span>
+          <!-- <label>Số lượng: </label> -->
+          <!-- <input
+            style="margin-top: 5px"
+            type="text"
+            value="<= product.quantity %>"
+          /> -->
+          <td class="cart_quantity">
+            <div style="margin-top: 5px; margin-left: 30px;" class="cart_quantity_button">
+                <a style="height: 33px;" class="cart_quantity_up" href=""> + </a>
+                <input style="padding-bottom: 0;" class="cart_quantity_input" type="text" name="quantity" value="<%= product.quantity %>" autocomplete="off" size="2"/>
+                <a style="height: 33px;" class="cart_quantity_down" href=""> - </a>
+            </div>
+        </td>
+        </span>
+        <a href="/addToCart/<%= product.id %>">
+          <button
+            style="margin-left: 0"
+            type="button"
+            class="btn btn-fefault cart"
+          >
+            <i class="fa fa-shopping-cart"></i>
+            Thêm vào giỏ hàng
+          </button>
+        </a>
+
+        <p><b>Bảo hành: </b><%= product.insurance %></p>
+        <p><b>Thời gian giao hàng: </b><%= product.delivery_time %></p>
+        <p><b>Tình trạng: </b> <%= product.availabity %></p>
+        <a href=""
+          ><img
+            src="/images/product-details/share.png"
+            class="share img-responsive"
+            alt=""
+        /></a>
+      </div>
+      <!--/product-information-->
+    </div>
+  </div>
+  <!--/product-details-->
+
+  <div class="category-tab shop-details-tab">
+    <!--category-tab-->
+    <div class="col-sm-12">
+      <ul class="nav nav-tabs">
+        <li>
+          <a href="#details" data-toggle="tab">Chi tiết sản phẩm</a>
+        </li>
+        <li class="active">
+          <a href="#reviews" data-toggle="tab">Đánh giá</a>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane fade" id="details">
+        <div class="col-md-8 proDetail">
+          <h3 class="title-description">Thông số kỹ thuật</h3>
+          <table class="table table-bordered">
+            <tr>
+              <th colspan="2">Bộ xử lý</th>
+            </tr>
+            <tr>
+              <td>CPU:</td>
+              <td><%= product.cpu %></td>
+            </tr>
+
+            <tr>
+              <td>Bộ nhớ đệm:</td>
+              <td><%= product.caching %></td>
+            </tr>
+
+            <tr>
+              <th colspan="2">Bộ nhớ RAM, Ổ cứng</th>
+            </tr>
+            <tr>
+              <td>RAM</td>
+              <td><%= product.ram %></td>
+            </tr>
+            <tr>
+              <td>Ổ cứng</td>
+              <td><%= product.hard_drive %></td>
+            </tr>
+
+            <tr>
+              <th colspan="2">Màn hình và Đồ hoạ</th>
+            </tr>
+            <tr>
+              <td>Màn hình:</td>
+              <td><%= product.screen %></td>
+            </tr>
+            <tr>
+              <td>Card màn hình:</td>
+              <td><%= product.graphic_card %></td>
+            </tr>
+
+            <tr>
+              <th colspan="2">Cổng kết nối & tính năng mở rộng</th>
+            </tr>
+            <tr>
+              <td>Cổng giao tiếp:</td>
+              <td><%= product.connector %></td>
+            </tr>
+            <tr>
+              <td>Đèn LED:</td>
+              <td><%= product.keyboard_light %></td>
+            </tr>
+
+            <tr>
+              <th colspan="2">Kích thước & khối lượng</th>
+            </tr>
+            <tr>
+              <td>Kích thước, khối lượng:</td>
+              <td><%= product.size %></td>
+            </tr>
+            <tr>
+              <td>Chất liệu:</td>
+              <td><%= product.material %></td>
+            </tr>
+
+            <tr>
+              <th colspan="2">Thông tin khác</th>
+            </tr>
+            <tr>
+              <td>Thông tin Pin:</td>
+              <td><%= product.battery %></td>
+            </tr>
+            <tr>
+              <td>Hệ điều hành:</td>
+              <td><%= product.version %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane fade active in" id="reviews">
+        <div class="col-sm-12">
+          <ul>
+            <li>
+              <a href=""><i class="fa fa-user"></i>EUGEN</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-clock-o"></i>12:41 PM</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-calendar-o"></i>31 DEC 2014</a>
+            </li>
+          </ul>
+          <p><%= product.product_detail %></p>
+          <p><b>Viết đánh giá của bạn</b></p>
+
+          <form action="#">
+            <span>
+              <input type="text" placeholder="Tên của bạn" />
+              <input type="email" placeholder="Địa chỉ Email" />
+            </span>
+            <textarea name=""></textarea>
+            <b>Xếp hạng: </b>
+            <img src="/images/product-details/rating.png" alt="" />
+            <button type="button" class="btn btn-default pull-right">
+              Gửi
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/category-tab-->
+  <% }) %>
+
+  <!-- <div class="recommended_items">
+    recommended_items
+    <h2 class="title text-center">Các sản phẩm đề xuất</h2>
+
+    <div
+      id="recommended-item-carousel"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="col-sm-4">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                <div class="productinfo text-center">
+                  <img src="/images/home/recommend1.jpg" alt="" />
+                  <h2>$56</h2>
+                  <p>Easy Polo Black Edition</p>
+                  <button type="button" class="btn btn-default add-to-cart">
+                    <i class="fa fa-shopping-cart"></i>Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                <div class="productinfo text-center">
+                  <img src="/images/home/recommend2.jpg" alt="" />
+                  <h2>$56</h2>
+                  <p>Easy Polo Black Edition</p>
+                  <button type="button" class="btn btn-default add-to-cart">
+                    <i class="fa fa-shopping-cart"></i>Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                <div class="productinfo text-center">
+                  <img src="/images/home/recommend3.jpg" alt="" />
+                  <h2>$56</h2>
+                  <p>Easy Polo Black Edition</p>
+                  <button type="button" class="btn btn-default add-to-cart">
+                    <i class="fa fa-shopping-cart"></i>Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="col-sm-4">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                <div class="productinfo text-center">
+                  <img src="/images/home/recommend1.jpg" alt="" />
+                  <h2>$56</h2>
+                  <p>Easy Polo Black Edition</p>
+                  <button type="button" class="btn btn-default add-to-cart">
+                    <i class="fa fa-shopping-cart"></i>Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                <div class="productinfo text-center">
+                  <img src="/images/home/recommend2.jpg" alt="" />
+                  <h2>$56</h2>
+                  <p>Easy Polo Black Edition</p>
+                  <button type="button" class="btn btn-default add-to-cart">
+                    <i class="fa fa-shopping-cart"></i>Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                <div class="productinfo text-center">
+                  <img src="/images/home/recommend3.jpg" alt="" />
+                  <h2>$56</h2>
+                  <p>Easy Polo Black Edition</p>
+                  <button type="button" class="btn btn-default add-to-cart">
+                    <i class="fa fa-shopping-cart"></i>Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a
+        class="left recommended-item-control"
+        href="#recommended-item-carousel"
+        data-slide="prev"
+      >
+        <i class="fa fa-angle-left"></i>
+      </a>
+      <a
+        class="right recommended-item-control"
+        href="#recommended-item-carousel"
+        data-slide="next"
+      >
+        <i class="fa fa-angle-right"></i>
+      </a>
+    </div>
+  </div> -->
+  <!--/recommended_items-->
+</div>

@@ -1,0 +1,95 @@
+<form
+  action="/doProductAdd"
+  method="post"
+  class="form-horizontal"
+  enctype="multipart/form-data"
+>
+  <!-- Form Name -->
+  <legend style="margin-left: 5px">Thêm sản phẩm</legend>
+
+  <!-- Text input-->
+  <div style="width: 1835pt" class="form-group">
+    <label class="col-md-4 control-label">Tên sản phẩm</label>
+    <div class="col-md-4">
+      <input
+        name="prd_name"
+        placeholder="Nhập tên sản phẩm"
+        class="form-control input-md"
+        type="text"
+      />
+    </div>
+  </div>
+
+  <!-- Text input-->
+  <div style="width: 1835pt" class="form-group">
+    <label class="col-md-4 control-label">Giá</label>
+    <div class="col-md-4">
+      <input
+        name="price"
+        placeholder="Nhập giá sản phẩm"
+        class="form-control input-md"
+        type="text"
+      />
+    </div>
+  </div>
+
+  <div style="margin-left: 8px" class="entry">
+    <label
+      style="padding: 0"
+      class="col-md-4 control-label"
+      for="product_description"
+      >Chi tiết</label
+    >
+    <script src="https://cdn.ckeditor.com/4.9.1/standard/ckeditor.js"></script>
+    <div style="width: 800px" class="body">
+      <textarea name="editor1"></textarea>
+      <script>
+        CKEDITOR.replace("editor1");
+      </script>
+    </div>
+  </div>
+
+  <!-- Select Basic -->
+  <div style="margin-top: 15px; width: 1835pt" class="form-group">
+    <label class="col-md-4 control-label">Danh mục</label>
+    <div class="col-md-4">
+      <select name="category" class="form-control">
+        <% categories.forEach(function(cat) { %>
+        <option value="<%= cat.id %>"><%= cat.category_name %></option>
+        <% }) %>
+      </select>
+    </div>
+  </div>
+
+  <div style="width: 1835pt" class="form-group">
+    <label class="col-md-4 control-label">Hình ảnh</label>
+    <div class="col-md-4">
+      <input
+        style="padding: 3px"
+        name="File_image"
+        placeholder="Chọn hình ảnh sản phẩm"
+        class="form-control input-md"
+        type="file"
+      />
+    </div>
+  </div>
+
+  <!-- Select Basic -->
+  <div style="width: 1835pt" class="form-group">
+    <label class="col-md-4 control-label">Trạng thái</label>
+    <div class="col-md-4">
+      <select name="status" class="form-control">
+        <option selected>1</option>
+        ;
+        <option>0</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Button -->
+  <div class="form-group">
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-default">Thêm</button>
+    </div>
+  </div>
+</form>

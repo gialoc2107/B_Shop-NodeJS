@@ -1,0 +1,60 @@
+<div class="col-sm-9 padding-right">
+  <!--features_items-->
+  <div class="features_items">
+    <h2 class="title text-center"><%= title %></h2>
+    <% products.forEach(function(product) { %>
+    <div class="col-sm-4">
+      <div class="product-image-wrapper">
+        <div class="single-products">
+          <div class="productinfo text-center">
+            <a href="/detail/<%= product.id %>"
+              ><img src="/images/home/<%= product.image %>" alt=""
+            /></a>
+            <p class="css_name-product">
+              <a href="/detail/<%= product.id %>"
+                ><%= product.product_name %></a
+              >
+            </p>
+            <div style="display: flex;">            
+              <p class="btn btn-default add-to-cart ram-ssd">
+                RAM <%= product.ramm %>
+              </p>
+
+              <p class="btn btn-default add-to-cart ram-ssd">
+                SSD <%= product.ssd %>
+              </p>
+            </div>
+
+            <div class="price_mt-1">
+              <div style="display: flex">
+                <span class="money font-item">₫</span>
+                <p class="text_price font-item">
+                  <%= product.price.toLocaleString('vi-VN') %>
+                </p>
+              </div>
+            </div>
+
+            <div class="ratingg">
+              <img src="/images/product-details/rating.png" alt="" />
+              <p class="article">Đã bán: <%= product.article_number %></p>
+            </div>
+          </div>
+          <div class="info-items">
+            <p><i class="fa-sharp fa-solid fa-tv icon-items"></i> <%= product.screen %></p>
+            <p><i class="fa-solid fa-microchip icon-items"></i> <%= product.cpu %></p>
+            <p><i class="fa-sharp fa-solid fa-memory icon-items"></i> <%= product.graphic_card %></p>
+            <p><i class="fa-solid fa-battery-three-quarters icon-items"></i> <%= product.battery %></p>
+            <p><i class="fa-sharp fa-solid fa-weight-hanging icon-items"></i> <%= product.weight %> </p>
+            <p><i class="fa-solid fa-location-dot"></i> <%= product.address %></p>
+          </div>
+          <img src="images/home/sale.png" class="new" alt="" />
+
+
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+
+  <!--features_items-->
+</div>

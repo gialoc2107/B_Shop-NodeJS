@@ -1,0 +1,89 @@
+<% ord.forEach(function(item) { %>
+
+<form
+  action="/doOrderEdit/<%= item.id %> "
+  method="post"
+  class="form-horizontal"
+>
+  <!-- Form Name -->
+  <legend style="margin-left: 5px">Chỉnh sửa đơn hàng</legend>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label">Tên khách hàng</label>
+    <div class="col-md-4">
+      <input
+        value="<%= item.fullname %>"
+        name="full_name"
+        placeholder="Nhập tên khách hàng"
+        class="form-control input-md"
+        type="text"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label">Địa chỉ</label>
+    <div class="col-md-4">
+      <input
+        value="<%= item.address %>"
+        name="address"
+        placeholder="Nhập địa chỉ"
+        class="form-control input-md"
+        type="text"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label">Email</label>
+    <div class="col-md-4">
+      <input
+        value="<%= item.email %>"
+        name="email"
+        placeholder="Nhập email"
+        class="form-control input-md"
+        type="text"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label">Số điện thoại</label>
+    <div class="col-md-4">
+      <input
+        value="<%= item.phone %>"
+        name="phone"
+        placeholder="Nhập số điện thoại"
+        class="form-control input-md"
+        type="text"
+      />
+    </div>
+  </div>
+
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label">Trạng thái</label>
+    <div class="col-md-4">
+      <select name="status" class="form-control">
+        <% if(item.status == 1){ %>
+        <option selected>1</option>
+        ;
+        <option>0</option>
+        <% } else { %>
+        <option>1</option>
+        ;
+        <option selected>0</option>
+        <% } %>
+      </select>
+    </div>
+  </div>
+
+  <!-- Button -->
+  <div class="form-group">
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-default">Lưu</button>
+    </div>
+  </div>
+</form>
+<% }) %>
